@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block css %}
+<style>
+    
+    #mainPage {
+        overflow-x: hidden;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 90vh;
+    }
+
+    .left-col {
+        height: 100%;
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    .left-col h1 {
+        font-weight: 400;
+        font-size: 50px;
+        cursor: pointer;
+    }
+
+    .left-col h1 span {
+        font-weight: 600;
+        font-size: 70px;
+    }
+
+    .left-col p {
+        font-size: 15px;
+        font-weight: 200;
+    }
+
+    .right-col {
+        height: 100%;
+        flex-basis: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    .right-col img {
+        margin-left: 100px;
+        width: 600px;
+        animation: imgRotate 50s infinite linear;
+    }
+
+    @keyframes imgRotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .left-col-content {
+        margin-left: 200px;
+    }
+
+    #about-me {
+        overflow-x: hidden;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .about-me-content {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-content h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    .about-me-content p {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 200;
+    }
+
+    .about-me-content p span {
+        font-weight: 400;
+    }
+
+    .qualifications-content {
+        margin-top: 100px;
+        width: 70%;
+    }
+
+    .qualifications-content h1 {
+        font-size: 35px;
+        font-weight: 300;
+    }
+
+    .degree {
+        width: 100%;
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .degree p {
+        font-size: 25px;
+        font-weight: 300;
+    }
+
+    .degree img {
+        width: 200px;
+    }
+
+    @media screen and (max-width: 1000px) {
+
+        #mainPage {
+            margin-top: 200px;
+            height: fit-content;
+            margin-bottom: 200px;
+        }
+
+        .right-col {
+            display: none;
+        }
+
+        .left-col {
+            width: 100vw;
+            display: block;
+            flex-basis: 100%;
+        }
+
+        .left-col-content {
+             margin-left: 20px;
+        }
+
+        .left-col h1 {
+            font-size: 40px;
+        }
+
+        .left-col h1 span {
+            font-size: 50px;
+        }
+
+        .about-me-content {
+            width: 97%;
+            height: fit-content;
+        }
+
+        .about-me-content h1 {
+            font-size: 20px;
+        }
+
+        .about-me-content p {
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .qualifications-content {
+            margin-top: 50px;
+            width: 80%;
+        }
+
+        .qualifications-content h1 {
+            font-size: 20px;
+        }
+
+        .degree {
+            justify-content: space-between;
+        }
+
+        .degree p {
+            width: 300px;
+            font-size: 15px;
+        }
+
+        .degree img {
+            width: 50px;
+        }
+
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<section id="mainPage">
+    <div class="left-col">
+        <div class="left-col-content">
+            <h1>Hey Everybody,<br> <span>It's me Venkadesh</span></h1>
+            <p>Student | Tech Enthusiast | Astrophile</p>
+        </div>
+    </div>
+    <div class="right-col">
+        <img src="{{ url_for('static', filename='mainPage.png') }}" alt="">
+    </div>
+</section>
+<section id="about-me">
+    <div class="about-me-content">
+        <h1>About Me</h1>
+        <p>A learning mindset with an unbreakable consistency will break the walls put forward by the world before them. Our mothers make us eat while showing the brightness of the moon in the silent dark, and now I proclaim that if we see the brightness in ourselves we can fill the world with a louder brightness. I see and think about the stars every time. when I get depressed because we can learn one thing by seeing them every time, they glow in the dark. I am a fellow who is interested in seeking the mysteries of the objects in the deepest and the darkest playgrounds.
+            <br>I got in love with computers in 3rd grade when my family bought the first desktop pc in my home. I was just astonished to see the fast-moving pages on the pc. I thought of them as a book that had several pages and they move fast. And when I grew up, I got to understand the magicians behind this magic, “The programmers”.  As soon as I got to know about the profession I was eager to make myself into it. At present, I am doing my Bachelor’s in computer science and engineering from a reputed institution. 
+            <br>The love that I have for computers, and the beautiful dark space above me make me unsleepable and push me to find the real passion that I have. 
+            <br><span>A passion hunter in an ocean.</span></p>
+    </div>
+    <div class="qualifications-content">
+        <h1>My Qualifications:</h1>
+        <div class="degree">
+            <p>Completed My school degree from 6th to 12th grade 
+                <br>Kendriya Vidyalaya Nagercoil.
+                <br>2019-2021</p>
+            <img src="{{ url_for('static', filename='kv.png') }}" alt="">
+        </div>
+        <div class="degree">
+            <img src="{{ url_for('static', filename='tce.png') }}" alt="">
+            <p>Doing my Bachelor’s Degree in Computer Science and Engineering 
+                <br>Thiagarajar College Of Engineering
+                <br>2019-2021</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}
+Blogs
+{% endblock %}
+
+{% block css %}
+<style>
+
+    .heading h1 {
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    .mainPage {
+        width: 100vw;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 100px;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+    }
+
+    .blogMini {
+        margin-top: 100px;
+        width: 250px;
+        height: 300px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 2px;
+        box-shadow: 5px 5px 10px #00000066;
+        padding: 30px;
+        position: relative;
+    }
+
+    .blogMini a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .blogMini h2 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .blogMini p {
+        font-size: 20px;
+        font-weight: 200;
+    }
+
+    #arrow {
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.527);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: 500ms;
+    }
+
+    #arrow:hover {
+        transform: translateY(-5px);
+    }
+
+    @media screen and (max-width: 800px) {
+
+        .mainPage {
+            grid-template-columns: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            justify-content: center;
+        }
+
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="heading">
+    <h1>My Blogs</h1>
+</div>
+<div class="mainPage">
+    {%  for i in data %}
+        <div class="blogMini">
+            <a href="/blogs/{{ i['_id'] }}"><h2>{{ i["heading"] }}</h2></a>
+            <p>{{ i['content'][:60] }} ...</p>
+            <a href="/blogs/{{ i['_id'] }}" id="arrow">&rarr;</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

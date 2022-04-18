@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}
+Blog Writer
+{% endblock %}
+
+{% block css %}
+<style>
+
+    .mainPage {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .blogWriter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+    }
+
+    .blogWriter form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .blogWriter h1 {
+        font-size: 25px;
+        font-weight: 300;
+    }
+
+    #heading {
+        width: 60%;
+    }
+
+    #content {
+        width: 60%;
+        height: 600px;
+        margin-top: 20px;
+    }
+
+    #date {
+        margin-top: 20px;
+    }
+
+    .blogWriter button {
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainPage">
+    <div class="blogWriter">
+        <form name="blog_writer">
+            <h1>Blog Writer</h1>
+            <input name="heading" type="text" placeholder="Heading" id="heading">
+            <textarea id="content" name="content" cols="30" rows="10" placeholder="content"></textarea>
+            <input type="date" id="date" name="date">
+            <button>Submit</button>
+        </form>
+    </div>
+</div>
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script>
+    $("form[name=blog_writer]").submit(function(e) {
+        var $form = $(this);
+        var $error = $form.find(".error");
+        var data = $form.serialize();
+
+        console.log(data);
+
+        $.ajax({
+            url: "/blogwriter",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function(resp) {
+                console.log(resp);
+                window.location.href="/blogs";
+            },
+            error: function(resp) {
+                console.log(resp);
+                console.log("Error")
+                // $error.text(resp.responseJSON.error).removeClass("error--hidden");
+            }
+        });
+
+        e.preventDefault();
+    })
+</script>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Me
+{% endblock %}
+
+{% block css %}
+<style>
+
+    .heading h1 {
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    .mainPage {
+        width: 100%;
+        padding: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .details {
+        width: 900px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .user-data {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .user-data img {
+        width: 70px;
+    }
+
+    .user-data a {
+        margin-left: 30px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .media {
+        display: none;
+    }
+
+    @media screen and (max-width: 800px) {
+        
+        .mainPage {
+            padding: 20px;
+        }        
+
+        .details {
+            width: 90%;
+        }
+
+        .user-data {
+            width: 100%;
+        }
+
+        .user-data img {
+            width: 20px;
+        }
+
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="heading">
+    <h1>Contact Me</h1>
+</div>
+<div class="mainPage">
+    <div class="details">
+        <div class="user-data">
+            <img src="{{ url_for('static', filename='mail.png') }}" alt="Mail">
+            <a href="mail.google.com" target="_blank"><p>venkadeshdeveloper@gmail.com</p></a>
+        </div>
+        <div class="user-data">
+            <img src="{{ url_for('static', filename='github.png') }}" alt="Github">
+            <a href="https://www.github.com/venkadesh004" target="_blank"><p>venkadesh004</p></a>
+        </div>
+        <div class="user-data">
+            <img src="{{ url_for('static', filename='twitter.png') }}" alt="Twitter">
+            <a href="https://www.twitter.com/SVenkadesh004" target="_blank"><p>SVenkadesh004</p></a>
+        </div>
+        <div class="user-data">
+            <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram">
+            <a href="https://www.instagram.com/venkadesh_developer" target="_blank"><p>venkadesh_developer</p></a>
+        </div>
+        <div class="user-data">
+            <img src="{{ url_for('static', filename='linkedin.png') }}" alt="Linkedin">
+            <a href="https://www.linkedin.com/in/venkadeshs" target="_blank"><p>venkadeshs</p></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
