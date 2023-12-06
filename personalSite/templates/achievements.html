@@ -14,15 +14,30 @@ Achievements
 
     .mainPage {
         width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
+        display: grid;
+        gap: 50px;
         min-height: 60vh;
+        justify-content: space-evenly;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+        margin-bottom: 50px;
+        margin-top: 50px;
+        padding: 10px 20px 20px 30px;
     }
 
-    .mainPage img {
-        opacity: 0.5;
+    .a-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 400px;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .a-1 img {
+        height: 200px;
+        width: 400px;
+        object-fit: contain;
     }
 
 </style>
@@ -33,6 +48,30 @@ Achievements
     <h1>Achievements</h1>
 </div>
 <div class="mainPage">
-    <img src="{{ url_for('static', filename='achievements.png') }}" alt="">
+    <div class="a-1">
+        <img src="{{ url_for('static', filename='achievements.png') }}" alt="">
+        <h2>PSG 24 Hour Hackthon</h2>
+        <p>Goal was to develop a Mobile application for users who are buying a second hand vehicle and want to know about there service datas.</p>
+    </div>
+    <div class="a-1">
+        <img src="{{ url_for('static', filename='iitm-student.jpeg') }}" alt="">
+        <h2>IITM RP Student Hackathon</h2>
+        <p>Goal was to develop a ML model to find the correct posture of lifting.</p>
+    </div>
+    <div class="a-1">
+        <img src="{{ url_for('static', filename='iitm-pals.jpeg') }}" alt="">
+        <h2>IITM PALS Hackathon</h2>
+        <p>Goal was to develop an IOT Project that can help in controlling user appliances using Eye Blink</p>
+    </div>
+    <div class="a-1">
+        <img src="{{ url_for('static', filename='devhackathon.jpeg') }}" alt="">
+        <h2>TCE DevHackthon</h2>
+        <p>To Develop a Mobile application for Blue labbor workers</p>
+    </div>
+    <div class="a-1">
+        <img src="{{ url_for('static', filename='achievements.png') }}" alt="">
+        <h2>Intel OneAPI CodeMaven Hackathon</h2>
+        <p>Goal was to use the OneAPI to segragate the user comments in a website as positive, negative or neutral.</p>
+    </div>
 </div>
 {% endblock %}
