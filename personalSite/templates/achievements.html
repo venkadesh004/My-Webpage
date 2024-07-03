@@ -40,6 +40,11 @@ Achievements
         object-fit: contain;
     }
 
+    .project {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
 </style>
 {% endblock %}
 
@@ -52,26 +57,37 @@ Achievements
         <img src="{{ url_for('static', filename='achievements.png') }}" alt="">
         <h2>PSG 24 Hour Hackthon</h2>
         <p>Goal was to develop a Mobile application for users who are buying a second hand vehicle and want to know about there service datas.</p>
+        <a class="project" href="https://github.com/venkadesh004/PSG_ITECH_FRONTEND" target="_blank">View Project</a>
     </div>
     <div class="a-1">
         <img src="{{ url_for('static', filename='iitm-student.jpeg') }}" alt="">
         <h2>IITM RP Student Hackathon</h2>
         <p>Goal was to develop a ML model to find the correct posture of lifting.</p>
+        <a class="project" href="https://github.com/venkadesh004/IITM-RP-IC-Student-Hackathon-Final-Round-Team-05" target="_blank">View Project</a>
     </div>
     <div class="a-1">
         <img src="{{ url_for('static', filename='iitm-pals.jpeg') }}" alt="">
         <h2>IITM PALS Hackathon</h2>
         <p>Goal was to develop an IOT Project that can help in controlling user appliances using Eye Blink</p>
+        <a class="project" href="https://github.com/venkadesh004/innowah-backend" target="_blank">View Project</a>
     </div>
     <div class="a-1">
         <img src="{{ url_for('static', filename='devhackathon.jpeg') }}" alt="">
         <h2>TCE DevHackthon</h2>
         <p>To Develop a Mobile application for Blue labbor workers</p>
+        <a class="project" href="https://github.com/venkadesh004/dev_hackathon_frontend" target="_blank">View Project</a>
     </div>
     <div class="a-1">
         <img src="{{ url_for('static', filename='achievements.png') }}" alt="">
         <h2>Intel OneAPI CodeMaven Hackathon</h2>
         <p>Goal was to use the OneAPI to segragate the user comments in a website as positive, negative or neutral.</p>
+        <a class="project" target="_blank">View Project</a>
+    </div>
+    <div class="a-1">
+        <img src="{{ url_for('static', filename='devshouse.jpeg') }}" alt="">
+        <h2>VIT Chennai GDSC Devshouse'24</h2>
+        <p>Goal was to develop an developer tools for the Hackathon</p>
+        <a class="project" href="https://www.npmjs.com/package/@venkadesh004/nodegem" target="_blank">View Project</a>
     </div>
 </div>
 {% endblock %}
